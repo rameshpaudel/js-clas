@@ -5,12 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Variables</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Variables</h1>
-    <script>
-        // var 
-    </script>
+    <div class="container">
+        <h1>Variables</h1>
+    
+        <button>Ask questions</button>
+
+        <div id="btn">Generate questions here</div>
+        <!-- <div id="btn">Second questions here</div> -->
+
+        <!-- <a href="#somewhere">Somewhere</a> -->
+
+    </div>
+
+    <div class="container">
+        <h1 class="heading" 2>Loops</h1>
+    
+        <p>Some loop will go here</p>
+        <button onclick="alert('Hello World')">Click here</button>
+    </div>
+
+    <div  style="position:fixed; right:0;top:10px;z-index: 9999 ">
+        <button onclick="changeBackground(document.body)">Change Background</button>
+        <button  onclick="addToCart(0)">Add to cart 1</button>
+        <button  onclick="addToCart(1)">Add to cart 2</button>
+        <button  onclick="addToCart(2)">Add to cart 3</button>
+        <div class="output"></div>
+        
+    </div>
+
     <script src="./js/script.js"></script>
+    <script src="./js/dom.js"></script>
+    <script src="./js/objects.js"></script>
 </body>
 </html>
+
+<!-- 
+
+onclick
+ondblclick
+onmouseover => trigger hover
+onmouseup => triggers when the click is made
+onmousedown => triggers after the click is released 
+
+-> trigger on  click -->

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Positining</title>
+    <style>
+        body{
+            position: relative;
+        }
+        .container{
+            background: #ededed;
+        
+        }
+        .output{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: all 0.2s linear;
+        }
+
+        .top-left{
+            left: 0;
+            top: 0;
+        }
+        
+        .top-right{
+            right: 0;
+            top: 0;
+        }
+        .bottom-right{
+            right: 0;
+            bottom: 0;
+        }
+        .center{
+            right: 50%;
+            left: 50%;
+            top: 50%;
+            bottom: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button>Left</button>
+        <button>Right</button>
+        <button>Bottom</button>
+        <button>Center</button>
+
+    </div>
+    <div class="output">
+        <div class="box">
+            <p>THis will move</p>
+        </div>
+    </div>
+    <script>
+        var buttons = document.querySelectorAll('button');
+        
+    </script>
+</body>
+</html>

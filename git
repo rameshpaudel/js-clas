@@ -1,0 +1,42 @@
+#Commands in git
+git init 
+    Initialize a new git repository in local
+
+
+git add filename
+        Adds a file into the local repository
+
+git commit -m 'Commit message goes here'
+    Add a commit message to the repository
+
+git clone remoteurl
+    Clone a remote url to local repository
+
+git pull origin master
+    Pulls the current code of remote to local repository
+
+git push origin master
+    Pushes the current code to remote repository
+
+git status:
+    Show current status of the repository
+
+git diff
+    Changes from last commit
+
+git checkout -- filename
+    Revert back filename to previous commit 
+
+    3 sstep processs
+
+    git add
+    git commit -m "message"
+    git push origin master
+
+___________________
+
+sujanpandey49@gmail.com
+sanjaygiri50702@gmail.com
+dahalprastut@gmail.com
+nepalanup57@gmail.com
+9mealon99@gmail.com

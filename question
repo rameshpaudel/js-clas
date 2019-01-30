@@ -1,0 +1,71 @@
+//DOCUMENT OBJECT MODEL QUERY
+
+document.getElementsByClassName('class_name')
+
+document.getElementById('id_name')
+
+document.getElementsByTagName('element_name');
+
+document.querySelector(' element_name #id .class_name ');
+
+
+
+// String => Object array  
+
+
+// html
+
+// 2 different class
+// 2 different div
+// 2 differnent ids
+// 2 different buttons
+// 1 h1 ->
+
+// =======================
+// container 1 => 1st element value => Test
+
+
+// Select 2 different class
+// change their inside into a paragraph
+
+
+// h1 will change after 5 second
+
+// First id will change its inside contains 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// setTimeout(function(){
+//     console.log('Hello from the other sides')
+// }, 5000);
