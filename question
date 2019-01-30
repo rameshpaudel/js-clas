@@ -33,39 +33,30 @@ document.querySelector(' element_name #id .class_name ');
 
 // First id will change its inside contains 
 
+// 30 JAN
 
 
 
+User -> ENter the number of times you want to input values
+  -->8
+
+
+//Enter the number of collegues in your class -> 8
+// Enter their names -> 8 
+// Every name should be in a div with h2 <div><h2>Harry Porter</h2></div>
 
 
 
+//TODO LIST
+// ---------------------------------
+// 1 -> Add todo
+// 2 -> Remove todo 
+
+// while clicking on `add todo` => prompt -> add on table add 
 
 
+// _________________________________
+// Get food      |  remove button
+// Complete work | remove button
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// setTimeout(function(){
-//     console.log('Hello from the other sides')
-// }, 5000);
