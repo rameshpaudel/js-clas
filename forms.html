@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .show .container{
+            background: blue;
+            height: 100vh;
+            display: block;
+        }
+        .container{
+            background: red;
+            /* display: none; */
+            height: 50vh;
+            transition: all 0.2s linear;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="clicked(this)">toggle</button>
+    <button id="clear">Stop this</button>
+    <div class="output">
+        <div class="container">
+            <form>
+                <input type="text" >
+                <button id="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <button>Left</button>
+        <button>Right</button>
+        <button>Bottom</button>
+        <button>Center</button>
+    
+    </div>
+    <div class="test">
+        <div class="box">
+            <p>THis will move</p>
+        </div>
+    </div>
+    <div class="container">
+        <button>Left</button>
+        <button>Right</button>
+        <button>Bottom</button>
+        <button>Center</button>
+    
+    </div>
+    <div class="test">
+        <div class="box">
+            <p>THis will move</p>
+        </div>
+    </div>
+    <script>
+        var button = document.querySelector('#btn');
+        console.log(button.children)
+
+        // button.onclick = function(){
+        //     document.body.classList.toggle('show');
+        //     console.log(document.querySelector('input').value);
+        
+        // }
+        // var clicked = function (element) {
+        //     console.log(element.nextElementSibling.remove())
+        // }
+
+        var form = document.querySelector('form');
+
+        form.onsubmit = function(test){
+            test.preventDefault();
+            var formData = document.querySelector('input').value;
+            console.log('formData',formData)
+        }
+        // window.onload = function(){
+            // alert('Window is loaded');
+        // }
+        function scroll(event) {
+                if (event.path[1].scrollY > 100) {
+                    alert('You are going to reach the end of the page')
+                }
+                console.log('Scrolled', event.path[1].scrollY)
+            }
+
+        window.onscroll=scroll
+
+
+        var contineous = setInterval(()=>{
+            console.log('RUnning this');
+        },500);
+
+
+        document.querySelector('#clear').onclick = function(){
+            clearInterval(contineous)
+        }
+    
+    </script>
+    
+</body>
+</html>

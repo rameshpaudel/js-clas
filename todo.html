@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>To do list</title>
-    <style>
-        table{
-            border: 1px solid #000;
-        }
-
-        tr{
-
-            border: 1px solid #000;
-        }
-    </style>
-</head>
-<body>
-    <button>Add to do</button>
-    <table>
-        <thead>
-            <tr>
-                <th>To do</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-           
-        </tbody>
-    </table>
-    <script src="./js/todo.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>To do list</title>
+        <link rel="stylesheet" href="./css/todo.css">
+    </head>
+    <body>
+        <div class="left half">
+            <div class="center">
+                <button>Add to do</button>
+                <button id="toggle-hidden">Hide/Show</button>
+            </div>
+        </div>
+        <div class="right half">
+            <h2>To Do List</h2>
+            <h4 class="hide warning">Currently hidden to do list are showing</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>To do</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <script src="./js/todo-1.js"></script>
+    </body>
 </html>

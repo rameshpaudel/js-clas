@@ -58,5 +58,22 @@ User -> ENter the number of times you want to input values
 // _________________________________
 // Get food      |  remove button
 // Complete work | remove button
+------------------------------------------------------
 
 
+-----------------------
+onmouseover
+onclick
+scroll -> Window
+--------------------------
+
+
+------------------------------------------------------------------------
+textarea  - User inputs the value which is then shown in the browser
+
+search -> Input -> search | button -> GO
+
+---------------------------------------------------
+break apart the paragraph add hr to every 10 words
+loop
+--------------------------------------------------

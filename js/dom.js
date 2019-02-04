@@ -48,6 +48,8 @@ var container = document.getElementsByClassName('container');
 
 
 
+
+
 // ===========================================
 // Timer functions
 // ===========================================
@@ -56,7 +58,7 @@ var container = document.getElementsByClassName('container');
 //     //Code will go here
 // },500);
 
-// //500 => run 
+// //After 500ms => run 
 // setTimeout(function(){
 // alert("THis is alert from timeout")
 // }, 500);
@@ -70,3 +72,4 @@ var interval = setInterval(function(){
 
 
 
+// Remove current element
