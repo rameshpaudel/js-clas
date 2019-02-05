@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Forms</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            .show .container {
+                background: blue;
+
+                display: block;
+            }
+            form {
+                height: 250px;
+            }
+            form input {
+                display: block;
+                margin: 10px;
+            }
+            form textarea {
+                display: block;
+                margin: 10px;
+            }
+            form button {
+                margin: 10px;
+                padding: 10px;
+                background-attachment: #ededed;
+            }
+            .container {
+                transition: all 0.2s linear;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="output">
+            <div class="container">
+                <form>
+                    <input type="text" placeholder="Search here" />
+                    <textarea cols="30" rows="10"></textarea>
+                    <button id="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            var random = function(limit, type = "upper") {
+                if (type === "lower") {
+                    return Math.floor(Math.random() * limit);
+                }
+                return Math.ceil(Math.random() * limit);
+            };
+            var getColor = function() {
+                return `background: rgba(${random(255)}, ${random(
+                    255
+                )}, ${(random(255), Math.random())})`;
+            };
+
+            // Loops over array of data and adds a hr to every 10th element
+            var loopData = function(event, words) {
+                var count = 0;
+                var hrCounter = 15;
+
+                for (let index = 0; index < words.length; index++) {
+                    const element = words[index];
+                    var data = element;
+
+                    if (count == hrCounter) {
+                        data += "<hr />";
+                    }
+
+                    event.innerHTML +=
+                        `<p style="${getColor()};color:black">` +
+                        data +
+                        "</p>";
+                    //If the count is 10 then reset back counter to 0
+                    count == hrCounter ? (count = 0) : count++;
+                }
+            };
+
+            var searchEngine = function(event) {
+                event.preventDefault();
+
+                var searchData = event.target[0].value;
+                var paragraph = event.target[1].value;
+
+                var words = paragraph.split(" ");
+
+                if (paragraph.includes(searchData)) {
+                    event.target.innerHTML += paragraph + "<h1>Your LIST</h1>";
+                    loopData(event.target, words);
+                }
+            };
+
+            document.querySelector("form").onsubmit = searchEngine;
+
+            // document.querySelector(".second-form").onsubmit = searchEngine;
+        </script>
+    </body>
+</html>

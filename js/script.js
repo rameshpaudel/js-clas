@@ -192,7 +192,6 @@ var changeBackground = function (element) {
     element.style = `background: rgba(${random(255)}, ${random(255)}, ${random(255), Math.random()})`
 }
 
-var arr = [1,2,3,4,5,6];
 
 
 // Event
