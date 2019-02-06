@@ -15,7 +15,7 @@ var scrollThis = param1 => {
     // console.log('total height', totalHeight)
     // console.log('current Scroll positiion', currentScrollPosition)
 
-    if (totalHeight < currentScrollPosition) {
+    if (totalHeight < currentScroll -Position) {
         document.body.classList.add("red");
     } else {
         //Animating the position fixed div
@@ -40,7 +40,8 @@ var onKeyPress = function(event){
     if (event.keyCode == 13){
         clickedOnTop();
     }
-    console.log('event', event.timeStamp);
+    console.log('event', event);
+    console.log('timestamp', event.timeStamp);
     console.log('key pressed', event.keyCode);
     console.log('key location', event['location']);
 }
@@ -70,12 +71,14 @@ backToTop.addEventListener("click", clickedOnTop);
     // console.log('total height', totalHeight)
     // console.log('current Scroll positiion', currentScrollPosition)
 const resizeWindow = (event)=>{
+    //Getting the outer height attribute from the window object
     var windowHeight = event.path[0].outerHeight;
     if(windowHeight > 500){
-        document.querySelector('body').style = "background:#ededed; border:10px solid yellow"
+        document.body.style = "background:#ededed; border:10px solid yellow"
+        //Do stuff here 
         console.log( 'the height is more than 100')
     }else{
-        document.querySelector('body').style = "background:red; border:none"
+        document.body.style = "background:red; border:none"
     
     }
     console.log('resized innerHeight', event.path[0].innerHeight)

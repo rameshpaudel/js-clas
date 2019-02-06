@@ -77,3 +77,46 @@ search -> Input -> search | button -> GO
 break apart the paragraph add hr to every 10 words
 loop
 --------------------------------------------------
+
+
+
+----------------------------------------------------------------------
+On height is greater than 500  
+  -> the box should be placed at left hand side
+On height is smaller than 500  
+  -> the box should be placed at top center hand side
+On width is smaller than 700  
+  -> body should randomly change its background color
+On width is greater than 700  
+  -> body should revert back to original color
+----------------------------------------------------------------------
+
+
+
+On form if the Ctrl Button is pressed then scale the div upper
+On form if the Alt Button is pressed then scale the div downwards
+
+
+css:
+transform: scale(1)
+
+On pressing Ctrl
+transform: scale(1.2)
+
+On pressing Ctrl
+transform: scale(1.4)
+
+On pressing Ctrl
+transform: scale(1.6)
+
+On pressing Alt
+transform: scale(1.4)
+
+On pressing Alt
+transform: scale(1.2)
+
+On pressing Alt
+transform: scale(1)
+
+minavailable = scale(.5)
+maxavailable = scale(10)
