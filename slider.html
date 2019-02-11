@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Test</title>
+        <style>
+            .slider {
+                margin: 0;
+                width: 9999px;
+                padding: 0;
+            }
+
+            .container {
+                width: 100%;
+                overflow: hidden;
+                height: 250px;
+            }
+            img {
+                width: 25vw;
+            }
+            .slider li {
+                transition: all 0.5s linear;
+                display: inline-block;
+                list-style-type: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <ul class="slider">
+                <li class="current">
+                    <img src="./images/1.jpg" alt="" />
+                </li>
+                <li><img src="./images/2.jpg" alt="" /></li>
+                <li><img src="./images/3.jpg " alt="" /></li>
+                <li><img src="./images/1.jpg" alt="" /></li>
+                <li><img src="./images/2.jpg" alt="" /></li>
+                <li><img src="./images/3.jpg " alt="" /></li>
+            </ul>
+        </div>
+
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+
+        <script>
+            var images = document.querySelectorAll("img");
+
+            var currentMargin = 0;
+            var sliderList = document.querySelector("li");
+
+            document.querySelector("#next").onclick = event => {
+                currentMargin += 50;
+
+              
+                sliderList.style = `margin-left: -${currentMargin}vw`;
+            };
+
+            document.querySelector("#prev").onclick = event => {
+                if (currentMargin >= 50) {
+              
+                    currentMargin -= 50;
+                    sliderList.style = `margin-left: ${currentMargin} vw`;
+                }
+            };
+
+            var startXPosition = 0;
+
+            document.querySelector(".slider").ondragstart = event => {
+                startXPosition = event.screenX;
+            };
+
+            document.querySelector(".slider").ondragend = event => {
+                if (event.screenX > startXPosition) {
+                    console.log("We are heading right");
+                } else {
+                    console.log("We are heading left");
+                }
+            };
+        </script>
+    </body>
+</html>
