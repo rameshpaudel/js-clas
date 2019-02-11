@@ -53,17 +53,19 @@
             document.querySelector("#next").onclick = event => {
                 currentMargin += 50;
 
-              
                 sliderList.style = `margin-left: -${currentMargin}vw`;
             };
 
             document.querySelector("#prev").onclick = event => {
                 if (currentMargin >= 50) {
-              
                     currentMargin -= 50;
                     sliderList.style = `margin-left: ${currentMargin} vw`;
                 }
             };
+
+            
+            //----------------------------------------------------------
+            // Drag events 
 
             var startXPosition = 0;
 
