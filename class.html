@@ -15,30 +15,34 @@
         //     console.log(event);
         // }
 
-    class Animal{
+        class Animal{
 
-        setName(name){
-            this.name = name;
-            return this;
-        }
+            // constructor(){
 
-        setAge(age){
-            this.age = age;
-            return this;
-        }
-        
-        getName(){
-            return this.name;
-        }
+            // }
 
-        addToBody(element){
-            var paragraph = document.createElement('p');
-            paragraph.innerText = `The name of the animal is ${this.name} and the age is ${this.age}`;
-            element.appendChild(paragraph);
-        }
+            setName(name){
+                this.name = name;
+                return this;
+            }
 
-        getAge(){
-            return this.age;
+            setAge(age){
+                this.age = age;
+                return this;
+            }
+            
+            getName(){
+                return this.name;
+            }
+
+            addToBody(element){
+                var paragraph = document.createElement('p');
+                paragraph.innerText = `The name of the animal is ${this.name} and the age is ${this.age}`;
+                element.appendChild(paragraph);
+            }
+
+            getAge(){
+                return this.age;
         }
     }
 
