@@ -51,15 +51,25 @@
                     var taskToRemove = this.tasks.filter(e => e == task); 
                     // this.tasks[]
                 }
+/*
+                selectTheFileld(){
+                    //some long and complex logic
+                }
                 
+                //Multiple methods can also be run by a single method
+                someFun(){
+                    var selector = this.selectTheFileld();
+                    this.remove(selector);
+                }
+ */               
             }
             var taskLists = new TaskList();
             document.querySelector('button').onclick = function(event){
-                var value = prompt("enter to do");
+                var value = prompt("Please, enter to do");
                 var task = new Task(value);
 
                 taskList.addTask(task);
-                
+
                 console.log(task);
             }
 
