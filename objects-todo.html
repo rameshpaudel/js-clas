@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>To do VIA Objects</title>
+        <link rel="stylesheet" href="./css/todo.css">
+    </head>
+    <body>
+        <div class="left half">
+            <div class="center">
+                <button>Add to do</button>
+                <button id="toggle-hidden">Hide/Show</button>
+            </div>
+        </div>
+        <div class="right half">
+            <h2>To Do List</h2>
+            <h4 class="hide warning">Currently hidden to do list are showing</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>To do</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <script>
+            class Task{
+                constructor(task, status = false){
+                    this.task = task
+                    this.status = status
+                    this.createdAt = Date()
+                }
+                
+            }
+
+            class TaskList{
+                constructor() {
+                    this.tasks = [];                    
+                }
+
+                addTask(task){
+                    var currentTask = new Task(task);
+                    this.tasks.push(curentTask);
+                }
+
+                remove(task){
+                    var taskToRemove = this.tasks.filter(e => e == task); 
+                    // this.tasks[]
+                }
+                
+            }
+            var taskLists = new TaskList();
+            document.querySelector('button').onclick = function(event){
+                var value = prompt("enter to do");
+                var task = new Task(value);
+
+                taskList.addTask(task);
+                
+                console.log(task);
+            }
+
+
+                        
+        </script>
+    </body>
+</html>
