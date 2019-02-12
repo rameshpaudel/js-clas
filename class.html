@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Class</title>
+       
+    </head>
+    <body>
+        <button >Click this</button>
+       
+   <script>
+        // document.querySelector('button').onclick = function(event){
+        //     console.log(event);
+        // }
+
+    class Animal{
+
+        setName(name){
+            this.name = name;
+            return this;
+        }
+
+        setAge(age){
+            this.age = age;
+            return this;
+        }
+        
+        getName(){
+            return this.name;
+        }
+
+        addToBody(element){
+            var paragraph = document.createElement('p');
+            paragraph.innerText = `The name of the animal is ${this.name} and the age is ${this.age}`;
+            element.appendChild(paragraph);
+        }
+
+        getAge(){
+            return this.age;
+        }
+    }
+
+    var dog = new Animal().setName('Dog').setAge(20);
+    var cat = new Animal().setName('Cat').setAge(2);
+
+    // task
+    // status
+    // createdAt -> new Date().
+
+// todo list
+// [
+//     {task : "Do this", status: true, createdAt: '2018-12-21'},
+//     {task : "Do that", status: false, createdAt: '2018-12-21'},
+// ]
+
+
+// taskList
+
+
+// get width of images
+
+// assign it to global variable
+
+// on drag left side slide left
+
+// on drag right side slide right
+
+
+   </script>
+    </body>
+</html>
