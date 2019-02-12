@@ -8,7 +8,7 @@
         <style>
             .slider {
                 margin: 0;
-                width: 9999px;
+                /* width: 9999px; */
                 padding: 0;
             }
 
@@ -48,24 +48,28 @@
             var images = document.querySelectorAll("img");
 
             var currentMargin = 0;
+            
+            var totalWidth = 0;
+
             var sliderList = document.querySelector("li");
 
-            document.querySelector("#next").onclick = event => {
+            var slideRight = event => {
                 currentMargin += 50;
 
                 sliderList.style = `margin-left: -${currentMargin}vw`;
             };
 
-            document.querySelector("#prev").onclick = event => {
+            var slideLeft = event => {
                 if (currentMargin >= 50) {
                     currentMargin -= 50;
                     sliderList.style = `margin-left: ${currentMargin} vw`;
                 }
             };
+            document.querySelector("#next").onclick = slideRight;
+            document.querySelector("#prev").onclick = slideLeft;
 
-            
             //----------------------------------------------------------
-            // Drag events 
+            // Drag events
 
             var startXPosition = 0;
 
@@ -75,11 +79,19 @@
 
             document.querySelector(".slider").ondragend = event => {
                 if (event.screenX > startXPosition) {
-                    console.log("We are heading right");
+                    slideRight();
                 } else {
-                    console.log("We are heading left");
+                    slideLeft();
                 }
             };
+
+            
+            for (let index = 0; index < images.length; index++) {
+                totalWidth += images[index].width;  
+            }
+
+            document.querySelector('.slider').style = `width: ${totalWidth}px`;
+            
         </script>
     </body>
 </html>
