@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>College</title>
+    </head>
+    <body>
+        <script>
+            class Student {
+                constructor(firstName, lastName, section, phone) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.section = section;
+                    this.phone = phone;
+                }
+
+                getFullName() {
+                    return `${this.firstName} ${this.lastName}`;
+                }
+            }
+
+            class Section {
+                constructor(section) {
+                    this.students = [];
+                    this.section = section;
+                }
+
+                enrollStudent(firstName, lastName, phone) {
+                    //First we create student to enroll in class
+                    var student = new Student(firstName, lastName, phone);
+                    
+                    //We can access the propertie from the objects
+                    console.log('firstName', student.firstName);
+                    
+                    this.students.push(student);
+                }
+
+                findViaRollNo(no){
+                    console(this.students[no])
+                }
+            }
+
+        
+
+            var sectionA = new Section('A');
+            sectionA.enrollStudent("Ram","Dhakal",12323134523);
+            sectionA.enrollStudent("Laxman","Dhakal",12323134523);
+            
+            var sectionB = new Section('B');
+            sectionB.enrollStudent("Hari","Dhakal",12323134523);
+            sectionB.enrollStudent("Sita","Dhakal",12323134523);
+            
+            var sectionC = new Section('C');
+            sectionC.enrollStudent("Harry","Potter",12323134523);
+            sectionC.enrollStudent("Joe","Rogan",12323134523);
+        </script>
+    </body>
+</html>
