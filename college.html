@@ -22,14 +22,14 @@
             }
 
             class Section {
-                constructor(section) {
+                constructor(sectionName) {
                     this.students = [];
-                    this.section = section;
+                    this.section = sectionName;
                 }
 
                 enrollStudent(firstName, lastName, phone) {
                     //First we create student to enroll in class
-                    var student = new Student(firstName, lastName, phone);
+                    var student = new Student(firstName, lastName, this.section, phone);
                     
                     //We can access the propertie from the objects
                     console.log('firstName', student.firstName);
