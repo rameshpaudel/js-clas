@@ -5,18 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>To do VIA Objects</title>
-        <link rel="stylesheet" href="./css/todo.css">
+        <link rel="stylesheet" href="./css/todo.css" />
     </head>
     <body>
         <div class="left half">
             <div class="center">
                 <button>Add to do</button>
-                <button id="toggle-hidden">Hide/Show</button>
             </div>
         </div>
         <div class="right half">
             <h2>To Do List</h2>
-            <h4 class="hide warning">Currently hidden to do list are showing</h4>
             <table>
                 <thead>
                     <tr>
@@ -28,53 +26,89 @@
             </table>
         </div>
         <script>
-            class Task{
-                constructor(task, status = false){
-                    this.task = task
-                    this.status = status
-                    this.createdAt = Date()
+            class Task {
+                constructor(task, status = true) {
+                    this.task = task;
+                    this.status = status;
+                    this.createdAt = Date();
                 }
-                
             }
 
-            class TaskList{
+            class TaskList {
                 constructor() {
-                    this.tasks = [];                    
+                    this.tasks = [];
                 }
 
-                addTask(task){
-                    var currentTask = new Task(task);
-                    this.tasks.push(curentTask);
+                //Gets the task from the user
+                addTask(task, status) {
+                    var todo = new Task(task, status);
+                    this.tasks.push(todo);
+                    return this;
                 }
 
-                remove(task){
-                    var taskToRemove = this.tasks.filter(e => e == task); 
-                    // this.tasks[]
+                removeTask(index) {
+                    this.tasks.splice(index, 1);
+                    return this;
                 }
-/*
-                selectTheFileld(){
-                    //some long and complex logic
+
+                //Change all todo list in frontend
+                repopulate(element) {
+                    element.innerHTML = "";
+                    for (let index = 0; index < this.tasks.length; index++) {
+                        var item = this.tasks[index];
+                        var currentTask = this.changeInUI(item.task, index);
+                        element.appendChild(currentTask);
+                    }
                 }
-                
-                //Multiple methods can also be run by a single method
-                someFun(){
-                    var selector = this.selectTheFileld();
-                    this.remove(selector);
+
+                changeInUI(item, position) {
+                    var tableRow = document.createElement("tr");
+                    var title = document.createElement("td");
+                    var description = document.createElement("td");
+                    var removeButton = document.createElement("button");
+                    var hideButton = document.createElement("button");
+
+                    //Todo task
+                    title.textContent = item;
+
+                    removeButton.innerText = "Remove";
+                    removeButton.setAttribute("onclick", `remove(${position})`);
+
+                    hideButton.innerText = "Hide";
+                    hideButton.setAttribute(
+                        "onclick",
+                        `toggleHide(${position})`
+                    );
+
+                    //Add button to the 2nd row
+                    description.appendChild(removeButton);
+                    description.appendChild(hideButton);
+
+                    //Add title to the row
+                    tableRow.appendChild(title);
+
+                    //Add description to the row
+                    tableRow.appendChild(description);
+
+                    return tableRow;
                 }
- */               
             }
-            var taskLists = new TaskList();
-            document.querySelector('button').onclick = function(event){
-                var value = prompt("Please, enter to do");
-                var task = new Task(value);
 
-                taskList.addTask(task);
+            var todos = new TaskList();
+            var element = document.querySelector("tbody");
 
-                console.log(task);
-            }
+            var remove = position => {
+                todos.removeTask(position).repopulate(element);
+            };
+
+            document.querySelector("button").onclick = () => {
+                var userInput = prompt("Enter your todo here");
+                todos.addTask(userInput).repopulate(element);
+            };
 
 
-                        
+            //create a todo object
+            
         </script>
     </body>
 </html>
