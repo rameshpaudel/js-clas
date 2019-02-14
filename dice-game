@@ -1,0 +1,28 @@
+    Rules of the game
+    1) 2 players will be playing the game
+    2) Each player will get a single turn
+    3) The dice should have numbers between 1-6
+    4) The first player to reach 50 will win the game
+    5) After player wins the game he/she should be congratulated with the player no
+
+    /////////////////////////////////////////////////////////////
+
+    //Get values for each player
+
+
+    // WHen starting out the players should have the value of player 1->0 player 2 -> 0
+
+    // Let user 1 to roll the dice
+
+    // Get the value of the dice and store it
+
+    // Change to 2nd player so he can roll the dice
+
+    // Get the value of the dice and store it
+
+    // Check if the player has reched the goal
+
+    // If the player hasn't reached the goal then continue playing
+
+    // After the goal is reached congratulate the player
+

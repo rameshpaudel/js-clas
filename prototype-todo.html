@@ -26,19 +26,47 @@
             </table>
         </div>
         <script>
+            //
+            var food = {
+                recipe: ["Fish","Salt", "Vinegar","Syrup","Sugar"],
+                name: "Fish Special",
+
+                cook: function(){
+                    console.log(this.name);
+                }
+
+
+            }
+
+            console.log('This is food item '+ JSON.stringify(food));
+
+
             function Task(task, status = true) {
+
+                //Is this an object which was instanciated??
+                if (!(this instanceof Task)) {
+                    //If not then create a new task
+                    return new Task(task,status);
+                }
                 this.task = task;
                 this.status = status;
                 this.createdAt = Date();
             }
-
-
+            
             function TaskList() {
+                //Is this an object which was instanciated??
+                if (!(this instanceof TaskList)) {
+                    //If not then create a new task list
+                    return new TaskList();
+                }
                 this.tasks = [];
             }
 
+            
             TaskList.prototype.addTask = function(task, status) {
-                var todo = new Task(task, status);
+                var todo = Task(task, status);
+                console.log('task', todo);
+                console.log('user given task', task);
                 this.tasks.push(todo);
                 return this;
             };
@@ -86,7 +114,7 @@
                 return tableRow;
             };
 
-            var todos = new TaskList();
+            var todos = TaskList();
             var element = document.querySelector("tbody");
 
             var remove = position => {
