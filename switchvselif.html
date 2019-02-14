@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Switch vs Else if</title>
+        <link rel="stylesheet" href="./css/todo.css" />
+    </head>
+    <body>
+        <div class="left half">
+            <div class="center">
+                <button>Add to do</button>
+            </div>
+        </div>
+        <div id="output" class="right half">
+            
+        </div>
+        <script>
+            function checkColor(name){
+                var body = document.querySelector("#output");
+                name = name.toLowerCase();
+                if(name == "orange"){
+                    body.textContent = "the given color is orange"
+                } else if(name== "red"){
+                    body.textContent = "REd is the color of choice"
+
+                } else if(name== "green"){
+                    body.textContent = "Green is "
+                } else {
+                    body.textContent = "some other color is present";
+                }
+            }
+
+            function checkColorViaSwitch(params) {
+                var body = document.querySelector("#output");
+                params = params.toLowerCase();
+                
+                switch (params) {
+                    case "orange":
+                        body.textContent = "the given color is orange"
+                        break;
+                    case "red":
+                       body.textContent = "REd is the color of choice"
+                        break;
+                    case "green":
+                        body.textContent = "Green is "
+                        break;
+                
+                    default:
+                        body.textContent = "some other color is present";
+                        break;
+                }
+            }
+
+            var todos = {};
+            var element = document.querySelector("#output");
+
+            var remove = position => {
+                
+            };
+
+            document.querySelector("button").onclick = () => {
+                var userInput = prompt("Enter your color of choice here");
+                checkColorViaSwitch(userInput);
+                
+            };
+
+            //create a todo object
+        </script>
+    </body>
+</html>
