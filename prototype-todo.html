@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>To do VIA Objects Prototype chain</title>
+        <link rel="stylesheet" href="./css/todo.css" />
+    </head>
+    <body>
+        <div class="left half">
+            <div class="center">
+                <button>Add to do</button>
+            </div>
+        </div>
+        <div class="right half">
+            <h2>To Do List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>To do</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <script>
+            function Task(task, status = true) {
+                this.task = task;
+                this.status = status;
+                this.createdAt = Date();
+            }
+
+
+            function TaskList() {
+                this.tasks = [];
+            }
+
+            TaskList.prototype.addTask = function(task, status) {
+                var todo = new Task(task, status);
+                this.tasks.push(todo);
+                return this;
+            };
+
+            TaskList.prototype.removeTask = function(index) {
+                this.tasks.splice(index, 1);
+                return this;
+            };
+
+            TaskList.prototype.repopulate = function(element) {
+                element.innerHTML = "";
+                for (let index = 0; index < this.tasks.length; index++) {
+                    var item = this.tasks[index];
+                    var currentTask = this.changeInUI(item.task, index);
+                    element.appendChild(currentTask);
+                }
+            };
+
+            TaskList.prototype.changeInUI = function(item, position) {
+                var tableRow = document.createElement("tr");
+                var title = document.createElement("td");
+                var description = document.createElement("td");
+                var removeButton = document.createElement("button");
+                var hideButton = document.createElement("button");
+
+                //Todo task
+                title.textContent = item;
+
+                removeButton.innerText = "Remove";
+                removeButton.setAttribute("onclick", `remove(${position})`);
+
+                hideButton.innerText = "Hide";
+                hideButton.setAttribute("onclick", `toggleHide(${position})`);
+
+                //Add button to the 2nd row
+                description.appendChild(removeButton);
+                description.appendChild(hideButton);
+
+                //Add title to the row
+                tableRow.appendChild(title);
+
+                //Add description to the row
+                tableRow.appendChild(description);
+
+                return tableRow;
+            };
+
+            var todos = new TaskList();
+            var element = document.querySelector("tbody");
+
+            var remove = position => {
+                todos.removeTask(position).repopulate(element);
+            };
+
+            document.querySelector("button").onclick = () => {
+                var userInput = prompt("Enter your todo here");
+                todos.addTask(userInput).repopulate(element);
+            };
+
+            //create a todo object
+        </script>
+    </body>
+</html>
