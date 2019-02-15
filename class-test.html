@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Classes Rev</title>
+        <link rel="stylesheet" href="./css/todo.css" />
+    </head>
+    <body>
+        <div class="left half">
+            <div class="center">
+                <button>Add to do</button>
+            </div>
+        </div>
+        
+        <script>
+            class Animal{
+                constructor(name,speicies, weight){
+                    this.name = name;
+                    this.speicies = speicies;
+                    this.weight = weight;
+                }
+
+                getWeightInKg(){
+                    return this.weight + 'kg';
+                }
+            }
+
+
+            class Section{
+                constructor(name){
+                    this.name = name;
+                    this.animals = [];
+                }
+
+                add(name,species, weight){
+                    var item = new Animal(name, species, weight)
+                    this.animals.push(item);
+                    return this;
+                }
+
+                remove(position){
+                    this.animals.splice(position, 1);
+                    return this;
+                }
+            }
+
+            
+            var endangered = new Section('endangered');
+            endangered
+            .add("Dog",'shephard', 20)
+            .add("Cat",'ssd', 220)
+            .add("DL og",'shephard', 20)
+            .add("House Cat",'ssd', 220);
+
+        </script>
+    </body>
+</html>
